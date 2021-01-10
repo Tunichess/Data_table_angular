@@ -1,0 +1,39 @@
+.example-tab-icon {
+  margin-right: 15px;
+}
+.table{
+
+}
+.example-form {
+  min-width: 150px;
+  max-width: 326px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 376px;
+}
+.example-full-width1 {
+  width: 376px;
+  margin-left: 5px;
+}
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-dialog-content {
+max-height: 75vh;
+}
+
+
+.test-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  margin-bottom: 5px;
+}

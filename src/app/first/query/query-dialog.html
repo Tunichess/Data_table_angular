@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Snapshot</h2>
+<mat-dialog-content  class="mat-typography"><app-fv-query-builder id="query-builder" class="margin30" [data]="query" [config]="config">
+
+
+</app-fv-query-builder></mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button  mat-dialog-close>Close</button>
+  <button mat-raised-button (click)="closeDialog()" color="primary" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,194 @@
+<mat-card>
+  <!-- <div class="flex-row bd-highlight mb-3">
+  <div class="p-2 bd-highlight">Flex item 1</div>
+  <div class="p-2 bd-highlight">Flex item 2</div>
+  <div class="p-2 bd-highlight">Flex item 3</div>
+</div> -->
+  <div class="row">
+    <div class="col-md-2">
+      <mat-form-field appearance="outline">
+        <mat-label>Schema</mat-label>
+        <select matNativeControl required>
+          <option value="Risk">Risk</option>
+        </select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-1" style="
+  margin-top: 15px;
+  margin-right: 10px;
+">
+      <mat-checkbox class="example-margin">Compare Queries</mat-checkbox>
+    </div>
+    <div class="col-md-1" style="
+  margin-top: 15px;
+">
+      <mat-checkbox class="example-margin">Unique Rows</mat-checkbox>
+    </div>
+    <div class="col-md-1" style="
+  margin-top: 15px;
+">
+      <mat-checkbox class="example-margin">Rows Limit</mat-checkbox>
+    </div>
+    <div class="col-md-6" style="
+">
+      <mat-form-field style="width: 60px;" appearance="outline">
+        <input matInput value="0">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <br><br><br>
+    <mat-tab-group style="width: 100%;">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">wysiwyg</mat-icon>
+          Selections
+        </ng-template>
+        <mat-grid-list cols="4" rowHeight="300px" style="width: 100%;">
+          <mat-grid-tile>
+            <mat-card style="
+            height: 316px;
+            width: 100%;
+        "><mat-card-title style="background-color: white;">
+              <button mat-stroked-button color="primary" (click)="openDialogSnap()" style="width: 99%;">SELECT SNAPSHOTS</button>
+            </mat-card-title>
+            <mat-card-content>
+              <table class="table" style="
+            background-color: antiquewhite;
+        ">
+              <thead [style.backgroundColor]="'#b2b2b2'">
+                <tr>
+                  <th>Snapshot     COB Date    Id</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of snapList">
+                  <td>{{item}}</td>
+                  <!-- <td>2020-11-11</td>
+                  <td>4593582</td> -->
+                </tr>
+
+              </tbody>
+            </table>
+            </mat-card-content>
+
+          </mat-card>
+
+
+
+
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card style="
+            height: 316px;
+            width: 100%;
+        ">
+        <mat-card-title>              <button mat-stroked-button color="primary" (click)="openDialog()" style="width: 99%;">DIMENSIONS</button>
+</mat-card-title>
+      <mat-card-content><table class="table" style="
+            background-color: aliceblue;
+        ">
+              <thead [style.backgroundColor]="'#b2b2b2'">
+                <tr>
+                  <th >Dimensions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of dimensionList">
+                  <td>{{item}}</td>
+                </tr>
+
+              </tbody>
+            </table></mat-card-content>
+
+      </mat-card>
+
+
+
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card style="
+            height: 316px;
+            width: 100%;
+        ">
+        <mat-card-title>              <button mat-stroked-button color="primary" (click)="openDialogMeasure()" style="width: 99%;">MEASURES</button>
+</mat-card-title>
+      <mat-card-content><table class="table" style="
+            background-color: aliceblue;
+        ">
+              <thead [style.backgroundColor]="'#b2b2b2'">
+                <tr>
+                  <th >Measures</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of measureList">
+                  <td>{{item}}</td>
+                </tr>
+
+              </tbody>
+            </table></mat-card-content>
+
+      </mat-card>
+
+
+
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card style="
+            height: 316px;
+            width: 100%;
+        ">
+        <mat-card-title>              <button mat-stroked-button color="primary" (click)="openDialogSort()" style="width: 99%;">SORTS</button>
+</mat-card-title>
+      <mat-card-content><table class="table" style="
+            background-color: aliceblue;
+        ">
+              <thead [style.backgroundColor]="'#b2b2b2'">
+                <tr>
+                  <th >Sorts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of sortList">
+                  <td>{{item.field}}</td>
+                </tr>
+
+              </tbody>
+            </table></mat-card-content>
+
+      </mat-card>
+
+
+
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">filter_alt</mat-icon>
+          Filters
+        </ng-template>
+        Coming Soon
+      </mat-tab>
+
+
+    </mat-tab-group>
+    <div class="control-section" style="overflow:auto;">
+      <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300' [gridSettings]='gridSettings' showGroupingBar='true' showFieldList='true' allowCalculatedField='true' allowExcelExport='true' >
+      </ejs-pivotview>
+    </div>
+  </div>
+
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary">Run</button>
+    <button mat-raised-button>Cancel</button>
+  </mat-card-actions>
+</mat-card>
+
+
